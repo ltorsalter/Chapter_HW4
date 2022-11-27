@@ -1,0 +1,59 @@
+
+public class test_p17 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Car6th cars[];
+		cars = new Car6th[2];
+		
+		cars[0] = new Car6th();
+		cars[0].setCar(1234, 20.5);
+		cars[1] = new RacingCar6th();
+		cars[1].setCar(4567, 30.5);
+		
+		for(int i=0;i<cars.length;i++) {
+			cars[i].show();
+		}
+	}
+}
+
+class Car6th{
+	protected int num;
+	protected double gas;
+	
+	public Car6th() {
+		num = 0;
+		gas = 0.0;
+		System.out.println("Produced a car.");
+	}
+	
+	public void setCar(int n,double g) {
+		num=n;
+		gas=g;
+		System.out.println("Set the car number to "+num+", gasoline volume is set to "+gas+".");
+	}
+	
+	public void show() {
+		System.out.println("The car number is "+num+".");
+		System.out.println("The gasoline volume is "+gas+".");
+	}
+}
+
+class RacingCar6th extends Car6th{
+	private int course;
+	
+	public RacingCar6th() {
+		course = 0;
+		System.out.println("Produced a racingcar.");
+	}
+	
+	public void setCourse(int c) {
+		course=c;
+		System.out.println("Set the racingcar number to "+course+".");
+	}
+	public void show() {
+		System.out.println("The racingcar number is "+num+".");
+		System.out.println("The gasoline volume is "+gas+".");
+		System.out.println("The racingcar serial number is "+course+".");
+	}
+}

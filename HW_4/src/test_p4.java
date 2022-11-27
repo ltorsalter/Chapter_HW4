@@ -1,0 +1,48 @@
+
+public class test_p4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		RacingCar1st rccar1;
+		rccar1 = new RacingCar1st();
+		rccar1.setCar(1234, 20.5);
+		rccar1.setCourse(5);
+	}
+
+}
+class Car1st{
+	private int num;
+	private double gas;
+	
+	public Car1st() {
+		num = 0;
+		gas = 0.0;
+		System.out.println("produced a car");
+	}
+	
+	public void setCar(int n,double g) {
+		num=n;
+		gas=g;
+		System.out.println("Set the vehicle number to "+num+", gasoline volume is set to "+gas);
+	}
+	
+	public void show() {
+		System.out.println("the vehicle number is "+num);
+		System.out.println("the gasoline volume is "+gas);
+	}
+}
+
+class RacingCar1st extends Car1st{
+	private int course;
+	
+	public RacingCar1st() {
+		course = 0;
+		System.out.println("produced a racingcar");
+	}
+	
+	public void setCourse(int c) {
+		course=c;
+		System.out.println("Set the racingcar number to "+course);
+	}
+	
+}
